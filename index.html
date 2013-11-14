@@ -9,6 +9,7 @@
 		.container {
 			border: 1px solid #999;
 			font-family: sans-serif;
+			font-size: 12px;
 			margin: 60px auto;
 			padding: 20px;
 			width: 200px;
@@ -41,14 +42,31 @@
 			opacity: 1;
 		}
 
+		strong {
+			font-size: 14px;
+		}
+
+		a {
+			color: #999;
+			text-decoration: none;
+		}
+
+		a:hover {
+			text-decoration: underline;
+		}
+
 	</style>
 
-	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
 </head>
+
 <body>
 
 	<div class="container">
+
+		<p>
+			<strong>FloatLabel</strong><br>
+			<a href="http://www.dennisbuijs.nl">Dennis Buijs</a> | <a href="https://github.com/DennisBuijs/FloatLabel">GitHub</a>
+		</p>
 
 		<form action="#" class="fl">
 
@@ -61,27 +79,8 @@
 
 	</div>
 
-	<script>
-
-		$(function() {
-
-			$(".fl [placeholder]").each(function() {
-				$(this).before('<span id="fl-'+$(this).attr("placeholder")+'" class="placeholder">'+$(this).attr("placeholder")+'</span>');
-			});
-
-			$(".fl [placeholder]").on("keyup", function() {
-
-				if($(this).val() != '') {
-					$('.fl #fl-'+$(this).attr("placeholder")).addClass("show");
-				} else {
-					$('.fl #fl-'+$(this).attr("placeholder")).removeClass("show");
-				}
-
-			});
-
-		});
-
-	</script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	<script src="floatlabel.js"></script>
 
 </body>
 </html>
